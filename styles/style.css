@@ -1,0 +1,43 @@
+
+h1 {
+    margin: 0px auto;
+    width: 300px;
+    border: 5px solid rgb(20, 32, 36);
+    border-top-style: double;
+    border-bottom-style: double;
+    margin-bottom: 5px; 
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    margin-left: 50px;
+    display: flex;
+}
+
+.cell {
+    padding: 20px;
+    border: black 2px solid;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    grid-auto-rows: 50px;
+    gap: 5px;
+    padding: 2px;
+    overflow: auto;
+    border: 3px black solid;
+    width: 800px;
+}
+
+.controls {
+    margin: 56px 10px 5px 5px;
+}
+
+.control {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 2px 20px;
+    margin-bottom: 5px;
+}
+
