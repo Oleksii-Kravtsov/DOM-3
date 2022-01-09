@@ -18,25 +18,25 @@
                 <button class="control" onclick="removeRow()">Remove Row</button><br>
                 <br>
                 <div class="flex">
-                    <select class="color-picker control" name="color" default="Pick Color">
-                        <option>White</option>
-                        <option>Black</option>
-                        <option>Red</option>
-                        <option>Green</option>
-                        <option>Blue</option>
-                        <option>Deep Pink</option>
+                    <select class="color-picker control" onchange="updateUserColor()" name="color">
+                        <option value="white">White</option>
+                        <option value="black">Black</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                        <option value="deeppink">Deep Pink</option>
                     </select>
-                    <button class="control">Fill Uncolored</button><br>
+                    <button class="control" onclick="fillUncolored()">Fill Uncolored</button><br>
                 </div>
-                <button class="control">Fill ALL</button>
-                <button class="control">Clear All</button><br>
+                <button class="control" onclick="fillAll()">Fill ALL</button>
+                <button class="control" onclick="clearAll()">Clear All</button><br>
             </div>
             <div>
                 <div class="grid">
-                    <button class="cell"></button>
-                    <button class="cell"></button>
-                    <button class="cell"></button>
-                    <button class="cell"></button>
+                    <button class="cell nocolor" id="b1" onclick="changeColor(this.id);"></button>
+                    <button class="cell nocolor" id="b2" onclick="changeColor(this.id);"></button>
+                    <button class="cell nocolor" id="b3" onclick="changeColor(this.id);"></button>
+                    <button class="cell nocolor" id="b4" onclick="changeColor(this.id);"></button>
                 </div>
             </div>
         </main>
