@@ -7,6 +7,7 @@ setColumns()
 
 function addRow(){
     rowCount++
+    setColumns()
     changeCells(true, columnCount)
 }
 function removeRow(){
@@ -40,8 +41,6 @@ function setColumns(){
 }
 
 function changeCells(mode, amount){
-    console.log("row count " + rowCount)
-    console.log("column count " + columnCount)
     //no cells remaining
     if(amount == 0){
         amount = 1
@@ -50,8 +49,10 @@ function changeCells(mode, amount){
     }
 
     for(let i = 0; i < amount; i++){
+        //if mode is to add, then add
         if(mode){
             addLastCell()
+        //if mode is to not add, then subtract
         }else{
             removeLastCell()
         }
