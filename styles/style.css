@@ -1,8 +1,8 @@
 body {
-    margin: 5px 0px 5px 5px;
-    border: solid black 5px;
+    margin: 0px;
+    border: dashed black .2vw;
     border-right: unset;
-    padding: 0px 5px 15px 40px;
+    padding: 0px 5px 15px 2vw;
     overflow: auto;
 }
 
@@ -22,12 +22,14 @@ main {
     display: flex;
     position: relative;
     flex-flow:row;
+    margin-left: 5vw;
 }
 
 .cell {
     padding: 20px;
     border-radius: 0px;
     border-style:hidden;
+    
 }
 
 .grid {
@@ -44,7 +46,7 @@ main {
 
 
 .controls {
-    padding-right: 5px;
+    padding-right: 1vw;
     text-align: center;
 }
 
@@ -55,11 +57,12 @@ main {
 .control {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: .1vw 1vw;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    width: max-content;
-    display: inline-block;
+    margin-bottom: .5vw;
+    margin-right: .5vw;
     font-size: 1vw;
+    border-radius: 1vw;
+    width: max-content;
+    border: .1vw solid black;
 }
 
 

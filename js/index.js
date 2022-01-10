@@ -12,13 +12,47 @@ let colorPicker = document.querySelector(".color-picker")
 let userColor = colorPicker.value
 let buttonId = 4
 
-//Color Manipulation//
+//Mouse tracking stuff
+let isColoring = false
+let coloredCells = new Set()
 
-//set the color of one cell
-function changeColor(id){
-    let cell = document.querySelector(`#${id}`)
-    setColor(cell, userColor)
+//Mouse Long Press Coloring//
+
+//user pressed on a button
+function startColoring(id){
+    isColoring = true;
+    beingColored(id)
 }
+
+function beingColored(id){
+    print("being colored")
+    if(isColoring != true){
+        print("not coloring today")
+        return
+    }
+    let cell = document.querySelector(`#${id}`)
+    if(coloredCells.has(cell)){
+        print(true)
+    }else{
+        print("I'll color you")
+        coloredCells.add(cell)
+        setColor(cell, userColor)
+    }
+}
+
+function startedColoring(){
+    isColoring = true
+}
+
+function stoppedColoring(){
+    isColoring = false
+    coloredCells = new Set()
+}
+
+
+//End//
+
+//Color Manipulation//
 
 //fill all
 function fillAll(){
@@ -95,6 +129,26 @@ function removeColumn(){
     changeCells(false, rowCount)
 }
 
+function add10Row(){
+    for(let i = 0; i < 10; i++){
+        addRow()
+    }
+}
+function remove10Row(){
+    for(let i = 0; i < 10; i++){
+        removeRow()
+    }
+}
+function add10Column(){
+    for(let i = 0; i < 10; i++){
+        addColumn()
+    }
+}
+function remove10Column(){
+    for(let i = 0; i < 10; i++){
+        removeColumn()
+    }
+}
 //update columns in html
 function setColumns(){
     grid.style.gridTemplateColumns = `repeat(${columnCount}, 50px`
@@ -132,9 +186,12 @@ function addLastCell(){
 
     buttonId++    
     newCell.id = "b" + buttonId
-
-    loadedFunction = changeColor.bind(this, newCell.id)
-    newCell.onclick = loadedFunction
+    //mouseover
+    loadBeingColored = beingColored.bind(this, newCell.id)
+    newCell.onmouseover = loadBeingColored
+    //onclick
+    loadStartColoring = startColoring.bind(this, newCell.id)
+    newCell.onmousedown = loadStartColoring
 
     grid.appendChild(newCell)
 }
