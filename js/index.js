@@ -151,7 +151,8 @@ function remove10Column(){
 }
 //update columns in html
 function setColumns(){
-    grid.style.gridTemplateColumns = `repeat(${columnCount}, 50px`
+    grid.style.gridTemplateColumns = `repeat(${columnCount}, 15px`
+    grid.style.gridAutoRows = "15px"
 }
 
 function changeCells(mode, amount){
