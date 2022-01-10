@@ -6,6 +6,11 @@ body {
     overflow: auto;
 }
 
+#end-top-controls {
+    padding-bottom: .5vw;
+    margin-bottom: 1vw;
+    border-bottom: .2vw solid black;
+}
 
 h1 {
     margin-left: 3vw;
